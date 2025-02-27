@@ -4,20 +4,10 @@ import com.example.dados.persistence.ContactDAO;
 import com.example.dados.persistence.EmployeeAuditDAO;
 import com.example.dados.persistence.EmployeeParamDAO;
 import com.example.dados.persistence.ModuleDAO;
-import com.example.dados.persistence.entity.EmployeeEntity;
-import com.example.dados.persistence.entity.ModuleEntity;
 import net.datafaker.Faker;
 import org.flywaydb.core.Flyway;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.Locale;
-import java.util.stream.Stream;
-
-import static java.time.ZoneOffset.UTC;
 
 public class Main {
 
@@ -106,7 +96,7 @@ public class Main {
         //System.out.println(employeeDAO.findById(1));
         //employeeDAO.findAll().forEach(System.out::println);
 
-        var entities = Stream.generate(() -> {
+        /*var entities = Stream.generate(() -> {
             var employee = new EmployeeEntity();
             employee.setName(faker.name().fullName());
             employee.setSalary(new BigDecimal(faker.number().digits(4)));
@@ -120,7 +110,7 @@ public class Main {
             }
             return employee;
         }).limit(3).toList();
-        entities.forEach(employeeDAO::insert);
+        entities.forEach(employeeDAO::insert);*/
 
         //moduleDAO.findAll().forEach(System.out::println);
     }
